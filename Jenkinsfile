@@ -3,17 +3,11 @@ pipeline {
 
     environment {
         DOCKER_IMAGE_NAME = 'nodejs-status-api'
-        CONTAINER_NAME = 'nodejs-api-container'
-        PORT = '3000'
+        CONTAINER_NAME    = 'nodejs-api-container'
+        PORT              = '3000'
     }
 
     stages {
-        stage('Checkout Code') {
-            steps {
-                git branch: 'main', url: 'https://github.com/your-username/your-repo.git'
-            }
-        }
-
         stage('Install Dependencies') {
             steps {
                 sh 'npm install'
