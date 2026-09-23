@@ -2,6 +2,8 @@ pipeline {
     agent any
 
     environment {
+        // Adds common macOS Node.js binary paths to Jenkins' PATH environment variable
+        PATH = "/usr/local/bin:/opt/homebrew/bin:${env.PATH}"
         DOCKER_IMAGE_NAME = 'nodejs-status-api'
         CONTAINER_NAME    = 'nodejs-api-container'
         PORT              = '3000'
